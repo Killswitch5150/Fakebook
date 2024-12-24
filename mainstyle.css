@@ -1,0 +1,70 @@
+/* Header one styling */
+h1 {
+    text-align: center;
+    font-weight: bold;
+    text-shadow: 0 0 10px #00f, 0 0 20px #00f, 0 0 30px #00f;
+    animation: glow 2s infinite; /* Animate the glow effect */
+}
+/* Header two styling */
+h2 {
+    text-align: center;
+    font-weight: bold;
+    text-shadow: 0 0 10px #00f, 0 0 20px #00f, 0 0 30px #00f;
+    animation: glow 2s infinite; /* Animate the glow effect */
+}
+/* Header three styling */
+h3 {
+    text-align: center;
+    font-weight: bold;
+    text-shadow: 0 0 5px #00f, 0 0 10px #00f, 0 0 15px #00f;
+}
+/* p styling */
+p {text-align: center;}
+/* div styling */
+div {text-align: center;}
+/* overall body styling */
+body {
+    margin: 60px;
+    padding: 0; /* Remove default padding */
+    height: 100vh; /* Set the body height to the full viewport height */
+    background: linear-gradient(to bottom, #87CEFA, #000080); /* Gradient background */
+    font-family: Arial, sans-serif; /* Optional: Choose a font */
+    color: white; /* Optional: Set text color to white for better visibility */
+}
+/* input styling */
+input {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #808080; /* Grey border */
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+input[type="submit"] {
+    background-color: #808080; /* Grey background color */
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+/* button styling */
+button {
+    margin: 10px;
+    background-color: #808080; /* Grey background color */
+    color: white; /* White text color */
+    padding: 10px 20px; /* Padding around text */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Add rounded corners */
+    cursor: pointer; /* Change cursor on hover */
+}
+button:hover {
+    background-color: #404040; /* Dark grey on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow on hover */
+}
+/* label styling */
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: bold;
+}

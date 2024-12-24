@@ -1,0 +1,116 @@
+<html>
+    <head>
+        <title id="title_id">
+            Feed
+        </title>
+        <style>
+            h1 {text-align: center;}
+            h2 {text-align: center;}
+            h3 {text-align: center;}
+            p {text-align: center;}
+            div {text-align: center;}
+            body {
+                margin: 60px;
+                padding: 0; /* Remove default padding */
+                height: 100vh; /* Set the body height to the full viewport height */
+                background: linear-gradient(to bottom, #87CEFA, #000080); /* Gradient background */
+                font-family: Arial, sans-serif; /* Optional: Choose a font */
+                color: white; /* Optional: Set text color to white for better visibility */
+            }
+            input {
+                margin: 10px;
+            }
+            button {
+                margin: 10px;
+                background-color: #808080; /* Grey background color */
+                color: white; /* White text color */
+                padding: 10px 20px; /* Padding around text */
+                border: none; /* Remove default border */
+                border-radius: 5px; /* Add rounded corners */
+                cursor: pointer; /* Change cursor on hover */
+            }
+            button:hover {
+                background-color: #404040; /* Dark grey on hover */
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow on hover */
+            }
+            .top-right-button {
+                position: absolute;
+                top: 10px; /* Adjust the distance from the top */
+                right: 10px; /* Adjust the distance from the right */
+            }
+        </style>
+        <script>
+            
+            // Function to get URL parameters
+            function getParameterByName(name, url) {
+                if (!url) url = window.location.href;
+                name = name.replace(/[\[\]]/g, "\\$&");
+                var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                    results = regex.exec(url);
+                if (!results) return null;
+                if (!results[2]) return '';
+                return decodeURIComponent(results[2].replace(/\+/g, " "));
+            }
+
+            
+
+            function checkLoginStatus() {
+                // Read the cookie to check if the user is logged in
+                const cookies = document.cookie.split(';');
+                //for loop checking
+                for (const cookie of cookies) {
+                    const [name, value] = cookie.trim().split('=');
+                    //if loggedIn=true, print to console
+                    if (name === 'loggedIn' && value === 'true') {
+                        // User is logged in, do something
+                        console.log('User is logged in');
+                        
+                    } else {
+                        window.location.href = "index.html";
+                    }
+                }
+    
+                // If not logged in, redirect to the login page
+                window.location.href = "index.html";
+            }
+    
+            // Check login status when the home page loads
+            //window.onload = checkLoginStatus;
+            
+            function logOut(){
+                document.cookie = "loggedIn=false; path=/";
+                var logoutUrl = "index.html";
+                window.location.href = logoutUrl;
+                function loginUser() {
+                
+        
+                // Redirect to the home page
+                window.location.href = "index.html";
+                }
+            }
+
+            // Get the variable from the URL
+            var uName = getParameterByName('data');
+            
+            // Use the variable as needed
+            console.log(uName);
+            
+        </script>
+    </head>
+    <body>
+        <button id='regnew' onclick=logOut() value="Top Right" class="top-right-button">Log Out</button>
+        <h1 id = "username_id">coming soon</h1>
+        <script>
+            let user_idcap = uName.toUpperCase();
+
+            document.getElementById("username_id").innerHTML = `Welcome Back, ${user_idcap}!`;
+            document.getElementById("title_id").innerHTML = `${user_idcap}'s Feed`;
+
+        </script>
+
+        <h3>Ain't Really anything for you to do yet.</h3>
+        <p>Check back later!</p>
+
+        
+    </body>
+</html>
