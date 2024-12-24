@@ -1,0 +1,46 @@
+To do list:
+- Move script to its own .js page assuming it wont break the functionality of the website
+- Figure out what I am going to do with feed.html
+    - Ideally I want to have functionality like this:
+        - Create post -> save into text file or similar
+            - Website loads everything in the file no matter who posted it
+                - Website displays it all on the feed as posts
+                    - User should be able to create a post, log out, log in as another user and still see the post, even if they reload/exit browser (will likely require SQLite)
+        - Original posters should be able to edit and delete their own posts (or atleast delete)
+        - Maybe implement a "sharing" option for users to engage on others posts
+        - Maybe implement a "comment" option for users to interact with each other
+        - All posts should have a title and body text
+        - An open ended array should be used so that the website could theoretically have unlimited posts
+    - If that doesnt work, my idea:
+        - IRC chatroom with maybe 10 rooms to join
+        - Text box at the bottom to write out a message and hit send or a button to post it to the room
+        - Have chat populate above and have it saved to a text or SQLite file so it can be seen by all users on the platform
+- Implement correct notation similar to this page, on to feed.html, complete with formatting corrections in code, comments, and a to do list specific to the feed page
+- Research VS Code options for:
+        - Open a remote window
+        - Port Forwarding
+        - Go Live (run a live server)
+            - And figure out how to use these features and if they will benefit me for my testing purposes
+
+Possible implementations:
+- SQLite or other database for the usernames and passwords
+    - Encrypting password data before it goes to sqlite if sqlite doesnt encrypt by default
+- Maybe add a picture or something on the home screen, idk it's pretty boring, a slightly transparent pic could look cool in the blue gradient, behind the login form
+- Implement a password complexity rule and checker using if statements or maybe switches
+    - Ideally, one uppercase, one lowercase, 6 chars, one special character
+    - Show the user which rules are not being followed if a password is not acceptable
+- Implement a username complexity rule and checker using if statements or maybe switches
+    - Only rule should be length, longer than 2 characters
+- Mess around with formatting to make it all prettier
+- I may not need the <div> class anymore. I implemented it for css purposes, but I think it can be removed without losing functionality or formatting
+- The text boxes may be able to be put into a <form> class. They were in one at a point and I lost functionality. I can try to implement it again in the future, low priority.
+- Maybe do something where the experience for the user logged in as Admin is different from others.
+    - If I get user posts working maybe I can implement a role system and have admin give people roles as moderators, who can delete other users posts
+    - Or maybe only admin can delete other peoples posts
+    - Admin should be able to maybe load up and edit the SQLite DB when it is established
+        - So admin can delete/disable accounts of malicious users/etc
+- Maybe add a feature for registration mode, that makes another text box come into existence, that asks user to confirm their password (type it again)
+    - Ensure passwords match (through if statements, give error messages accordingly, if they do not)
+    - Maybe add an email field too, though I doubt I'll do anything with it, especially if I go the IRC chatroom route
+        - Could just have it save to the SQLite DB (once implemented) and decide if I wanted to keep it or get rid of it to promote user anonymity on the platform
+- Somehow sanitize user input (particularly username) before transit to next web page, potential xss/html inserts
