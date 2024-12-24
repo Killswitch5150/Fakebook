@@ -1,0 +1,9 @@
+Most recent changes:
+- Removed regUname variable that was not being used
+- Set all console output to only be visible if isDebugging === true
+- Removed all references to isAuthed variable as it has been deprecated and is not used for any conditions
+- Got rid of any instance of username being echoed back through dialogue and replaced with more standardized messages
+- Debugging mode can be entered through username field so console output appears using 'isDebugging true' or 'isDebugging false' respectively
+- Got rid of 'Login to continue' prompt text. Now it only appears when guiding the end user
+- Implemented page title dynamics depending on if user is signing up or logging in
+- Feedback element on login page will now indicate when entering or leaving debug mode
